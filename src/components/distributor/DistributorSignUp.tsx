@@ -8,6 +8,7 @@ import StepAccount from "./StepAccount";
 import StepBusiness from "./StepBusiness";
 import StepReview from "./StepReview";
 import { validateStep1, validateStep2 } from "@/utils/utils";
+import Button from "@/common/Button";
 
 type Errors = {
   companyName?: string;
@@ -135,30 +136,30 @@ const DistributorSignUp = () => {
           {/* ACTION BUTTONS */}
           <div className="flex justify-between pt-4">
             {step !== 1 && (
-              <button
+              <Button
                 disabled={step === 1}
                 onClick={() => setStep(step - 1)}
                 className="px-5 py-2 rounded-lg bg-gray-100 disabled:opacity-40"
               >
                 Back
-              </button>
+              </Button>
             )}
 
             {step < 3 ? (
-              <button
+              <Button
                 onClick={handleNext}
                 className="px-6 py-2 rounded-lg bg-blue-600 text-white"
               >
                 Continue
-              </button>
+              </Button>
             ) : (
-              <button
+              <Button
                 disabled={!agree}
                 className="px-6 py-2 rounded-lg bg-blue-600 text-white disabled:opacity-40"
                 onClick={handleComplete}
               >
                 Confirm & Finish
-              </button>
+              </Button>
             )}
           </div>
         </div>

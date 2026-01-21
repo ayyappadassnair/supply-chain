@@ -2,6 +2,7 @@ import Input from "@/common/Input";
 import { areFieldsFilled } from "@/utils/utils";
 import ProgressBar from "./ProgressBar";
 import { RetailerFormData } from "./RetailerSignUp";
+import Button from "@/common/Button";
 
 type Props = {
   data: RetailerFormData;
@@ -95,14 +96,14 @@ const StepBussiness = ({ data, onChange, onNext, onBack }: Props) => {
 
       {/* ACTIONS */}
       <div className="flex gap-4 pt-4">
-        <button
+        <Button
           onClick={onBack}
           className="h-12 px-6 rounded-lg border border-gray-300 text-gray-700 font-semibold"
         >
           Back
-        </button>
+        </Button>
 
-        <button
+        <Button
           onClick={onNext}
           disabled={!isFormValid}
           className={`h-12 flex-1 rounded-lg bg-blue-800 text-white font-bold hover:bg-blue-700 ${
@@ -110,7 +111,7 @@ const StepBussiness = ({ data, onChange, onNext, onBack }: Props) => {
           }`}
         >
           Save & Continue
-        </button>
+        </Button>
       </div>
     </div>
   );

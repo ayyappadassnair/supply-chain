@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Button from "@/common/Button";
 
 const LoginPage = () => {
   const [authMethod, setAuthMethod] = useState<"password" | "otp">("password");
@@ -103,7 +104,7 @@ const LoginPage = () => {
                       placeholder="Enter your password"
                       className="form-input h-12 flex-1 rounded-l-lg border border-r-0 border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark px-4 focus:ring-2 focus:ring-primary/50"
                     />
-                    <button
+                    <Button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
                       className="px-4 border border-l-0 border-slate-300 dark:border-slate-700 rounded-r-lg text-slate-400 hover:text-primary"
@@ -125,7 +126,7 @@ const LoginPage = () => {
                           />
                         )}
                       </span>
-                    </button>
+                    </Button>
                   </div>
                 </label>
               ) : (
@@ -166,12 +167,12 @@ const LoginPage = () => {
               </Link>
             </div>
 
-            <button
+            <Button
               type="button"
               className="mt-4 h-12 w-full bg-blue-600 text-white font-medium rounded-lg hover:bg-primary-dark transition-colors"
             >
               Login
-            </button>
+            </Button>
 
             {/* CTA */}
             <p className="text-sm text-slate-500 dark:text-slate-400 pt-4 flex justify-between">

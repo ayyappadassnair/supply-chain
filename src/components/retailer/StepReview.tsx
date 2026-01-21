@@ -1,6 +1,7 @@
 import { useRouter } from "next/navigation";
 import ProgressBar from "./ProgressBar";
 import { RetailerFormData } from "./RetailerSignUp";
+import Button from "@/common/Button";
 
 const StepReview = ({
   data,
@@ -56,19 +57,19 @@ const StepReview = ({
       </div>
 
       <div className="flex gap-4 mt-4">
-        <button
+        <Button
           onClick={onBack}
           className="h-12 px-6 rounded-lg border border-gray-300 text-gray-700 font-semibold"
         >
           Back
-        </button>
+        </Button>
 
-        <button
+        <Button
           onClick={handleComplete}
           className="h-12 w-full rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700"
         >
           Confirm & Complete Account
-        </button>
+        </Button>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Button from "@/common/Button";
 
 type Role = "distributor" | "retailer" | null;
 
@@ -42,7 +43,7 @@ const RoleSelectionPage = () => {
         {/* Role Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {/* Distributor */}
-          <button
+          <Button
             type="button"
             onClick={() => setRole("distributor")}
             className={`rounded-xl border p-6 text-left transition-all hover:border-blue-600 focus:outline-none ${isSelected(
@@ -65,10 +66,10 @@ const RoleSelectionPage = () => {
               Manage inventory, fulfill orders, and supply to a network of
               retailers.
             </p>
-          </button>
+          </Button>
 
           {/* Retailer */}
-          <button
+          <Button
             type="button"
             onClick={() => setRole("retailer")}
             className={`rounded-xl border p-6 text-left transition-all hover:border-blue-600 focus:outline-none ${isSelected(
@@ -91,12 +92,12 @@ const RoleSelectionPage = () => {
               Place orders from distributors, manage stock, and sell to
               consumers.
             </p>
-          </button>
+          </Button>
         </div>
 
         {/* Continue Button */}
         <div className="flex justify-center mb-14">
-          <button
+          <Button
             disabled={!role}
             onClick={handleGoToRole}
             className={`h-12 w-full max-w-xs rounded-lg font-bold transition-all
@@ -107,7 +108,7 @@ const RoleSelectionPage = () => {
               }`}
           >
             Continue
-          </button>
+          </Button>
         </div>
 
         {/* Footer */}

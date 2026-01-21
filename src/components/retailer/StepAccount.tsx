@@ -3,6 +3,7 @@ import { areFieldsFilled } from "@/utils/utils";
 import ProgressBar from "./ProgressBar";
 import { RetailerFormData } from "./RetailerSignUp";
 import { useState } from "react";
+import Button from "@/common/Button";
 
 type Props = {
   data: RetailerFormData;
@@ -79,7 +80,7 @@ const StepAccount = ({ data, onChange, onNext }: Props) => {
         placeholder="Re-enter your password"
       />
 
-      <button
+      <Button
         onClick={onNext}
         disabled={!isFormValid}
         className={`h-12 rounded-lg bg-blue-800 text-white font-bold hover:bg-blue-700 ${
@@ -87,7 +88,7 @@ const StepAccount = ({ data, onChange, onNext }: Props) => {
         }`}
       >
         Create Account & Continue
-      </button>
+      </Button>
     </div>
   );
 };
