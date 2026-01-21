@@ -33,9 +33,24 @@ const LeftPanel = ({ step }: { step: number }) => {
 
       {/* STEPS */}
       <div className="flex flex-col gap-6 pb-4">
-        <StepIndicator step={step} index={1} title="Account Info" />
-        <StepIndicator step={step} index={2} title="Business Details" />
-        <StepIndicator step={step} index={3} title="Review & Finish" />
+        <StepIndicator
+          step={step}
+          index={1}
+          title="Account Info"
+          description="Provide your personal creditials for account access."
+        />
+        <StepIndicator
+          step={step}
+          index={2}
+          title="Business Details"
+          description="Enter your company's information for verification"
+        />
+        <StepIndicator
+          step={step}
+          index={3}
+          title="Review & Finish"
+          description="Confirm your details and complete registration."
+        />
       </div>
     </div>
   );

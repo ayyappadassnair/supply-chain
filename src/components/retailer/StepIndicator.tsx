@@ -4,10 +4,12 @@ const StepIndicator = ({
   step,
   index,
   title,
+  description,
 }: {
   step: number;
   index: number;
   title: string;
+  description: string;
 }) => {
   const active = step === index;
   const completed = step > index;
@@ -32,7 +34,7 @@ const StepIndicator = ({
 
       <div>
         <h3 className="font-bold">{title}</h3>
-        <p className="text-sm text-gray-600">Step {index} description</p>
+        <p className="text-sm text-gray-600">{description}</p>
       </div>
     </div>
   );
