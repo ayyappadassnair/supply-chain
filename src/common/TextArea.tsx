@@ -4,6 +4,7 @@ type TextareaProps = {
   onChange: (v: string) => void;
   placeholder?: string;
   rows?: number;
+  error?: string;
 };
 
 const Textarea = ({
@@ -12,6 +13,7 @@ const Textarea = ({
   onChange,
   placeholder,
   rows = 3,
+  error,
 }: TextareaProps) => {
   return (
     <div className="flex flex-col gap-1.5">
@@ -22,8 +24,11 @@ const Textarea = ({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className="rounded-lg border px-3 py-2"
+        className={`rounded-lg border px-3 py-2 ${
+          error ? "border-red-500" : "border-gray-300"
+        }`}
       />
+      {error && <p className="text-xs text-red-600">{error}</p>}
     </div>
   );
 };

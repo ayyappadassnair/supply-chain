@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const areFieldsFilled = <T extends Record<string, any>>(
   data: T,
   requiredFields: (keyof T)[],
@@ -22,6 +23,8 @@ export const validateStep1 = (data: {
   if (!data.workEmail) errors.workEmail = "Work email is required";
 
   if (!data.password) errors.password = "Password is required";
+  if (!data.confirmPassword)
+    errors.confirmPassword = "Confirm password is required";
   if (data.password.length < 6)
     errors.password = "Password must be at least 6 characters";
 
