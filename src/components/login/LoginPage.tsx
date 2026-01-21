@@ -4,6 +4,22 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/common/Button";
+import {
+  CHAINLINK,
+  CONNECTING_YOUR_SUPPLY_CHAIN,
+  CREATE_ACCOUNT,
+  EMAIL_ADDRESS,
+  ENTER_CREDENTIALS,
+  FORGOT_PASSWORD,
+  LOGIN,
+  NEED_AN_ACCOUNT,
+  OTP,
+  PASSWORD,
+  PLATFORM_DESCRIPTION,
+  REMEMBER_ME,
+  WEBHOOK,
+  WELCOME_BACK,
+} from "@/constants/constants";
 
 const LoginPage = () => {
   const [authMethod, setAuthMethod] = useState<"password" | "otp">("password");
@@ -24,17 +40,14 @@ const LoginPage = () => {
           <div className="relative z-10 text-white flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-4xl text-primary">
-                webhook
+                {WEBHOOK}
               </span>
-              <h1 className="text-2xl font-bold">ChainLink</h1>
+              <h1 className="text-2xl font-bold">{CHAINLINK}</h1>
             </div>
             <p className="text-4xl lg:text-5xl font-black tracking-tighter">
-              Connecting Your Supply Chain, Seamlessly.
+              {CONNECTING_YOUR_SUPPLY_CHAIN}
             </p>
-            <p className="text-gray-300 max-w-md">
-              The unified platform for distributors and retailers to optimize
-              logistics, manage inventory, and drive growth.
-            </p>
+            <p className="text-gray-300 max-w-md">{PLATFORM_DESCRIPTION}</p>
           </div>
         </div>
 
@@ -45,17 +58,17 @@ const LoginPage = () => {
             <div className="flex flex-col gap-6">
               <div>
                 <p className="text-3xl font-black text-slate-800 dark:text-slate-200">
-                  Welcome Back
+                  {WELCOME_BACK}
                 </p>
                 <p className="text-slate-500 dark:text-slate-400">
-                  Enter your credentials to access your dashboard.
+                  {ENTER_CREDENTIALS}
                 </p>
               </div>
 
               {/* Auth Switch */}
               <div className="flex h-12 rounded-lg bg-slate-200/80 dark:bg-slate-800/50 p-1">
                 <label className="flex grow items-center justify-center cursor-pointer rounded-md has-[:checked]:bg-background-light has-[:checked]:dark:bg-slate-700/80 has-[:checked]:shadow">
-                  <span>Password</span>
+                  <span>{PASSWORD}</span>
                   <input
                     type="radio"
                     className="invisible w-0"
@@ -64,7 +77,7 @@ const LoginPage = () => {
                   />
                 </label>
                 <label className="flex grow items-center justify-center cursor-pointer rounded-md has-[:checked]:bg-background-light has-[:checked]:dark:bg-slate-700/80 has-[:checked]:shadow">
-                  <span>OTP</span>
+                  <span>{OTP}</span>
                   <input
                     type="radio"
                     className="invisible w-0"
@@ -80,7 +93,7 @@ const LoginPage = () => {
               {/* Email */}
               <label className="flex flex-col">
                 <span className="text-sm font-medium pb-2 text-slate-800 dark:text-slate-200">
-                  Email Address
+                  {EMAIL_ADDRESS}
                 </span>
                 <input
                   type="email"
@@ -94,7 +107,7 @@ const LoginPage = () => {
               {authMethod === "password" ? (
                 <label className="flex flex-col">
                   <span className="text-sm font-medium pb-2 text-slate-800 dark:text-slate-200">
-                    Password
+                    {PASSWORD}
                   </span>
                   <div className="flex">
                     <input
@@ -132,7 +145,7 @@ const LoginPage = () => {
               ) : (
                 <label className="flex flex-col">
                   <span className="text-sm font-medium pb-2 text-slate-800 dark:text-slate-200">
-                    OTP
+                    {OTP}
                   </span>
                   <input
                     type="text"
@@ -156,14 +169,14 @@ const LoginPage = () => {
               <label className="flex items-center gap-2">
                 <input type="checkbox" className="form-checkbox" />
                 <span className="text-sm text-slate-600 dark:text-slate-400">
-                  Remember me
+                  {REMEMBER_ME}
                 </span>
               </label>
               <Link
                 href="/forgot-password"
                 className="text-sm font-medium text-primary hover:underline"
               >
-                Forgot Password?
+                {FORGOT_PASSWORD}
               </Link>
             </div>
 
@@ -171,17 +184,17 @@ const LoginPage = () => {
               type="button"
               className="mt-4 h-12 w-full bg-blue-600 text-white font-medium rounded-lg hover:bg-primary-dark transition-colors"
             >
-              Login
+              {LOGIN}
             </Button>
 
             {/* CTA */}
             <p className="text-sm text-slate-500 dark:text-slate-400 pt-4 flex justify-between">
-              Need an account?{" "}
+              {NEED_AN_ACCOUNT}
               <Link
                 href="/role-selection"
                 className="font-medium text-blue-600 hover:underline"
               >
-                Create Account
+                {CREATE_ACCOUNT}
               </Link>
             </p>
           </div>

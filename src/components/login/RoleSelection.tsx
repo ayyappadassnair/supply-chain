@@ -5,6 +5,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Button from "@/common/Button";
+import {
+  ALREADY_HAVE_AN_ACCOUNT,
+  CONTINUE,
+  COPYRIGHT,
+  DISTRIBUTOR_DESCRIPTION,
+  FIRST_TELL_US_WHO_YOU_ARE,
+  I_AM_A_DISTRIBUTOR,
+  I_AM_A_RETAILER,
+  JOIN_OUR_NETWORK,
+  LOGIN_IN,
+  RETAILER_DESCRIPTION,
+} from "@/constants/constants";
 
 type Role = "distributor" | "retailer" | null;
 
@@ -33,10 +45,10 @@ const RoleSelectionPage = () => {
         {/* Heading */}
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-black tracking-tight dark:text-gray-200">
-            Join Our Network
+            {JOIN_OUR_NETWORK}
           </h1>
           <p className="mt-2 text-lg text-slate-500">
-            First, tell us who you are.
+            {FIRST_TELL_US_WHO_YOU_ARE}
           </p>
         </div>
 
@@ -60,11 +72,10 @@ const RoleSelectionPage = () => {
               />{" "}
             </div>
             <p className="text-lg font-bold text-slate-900 dark:text-gray-200">
-              I am a Distributor
+              {I_AM_A_DISTRIBUTOR}
             </p>
             <p className="mt-1 text-sm text-slate-500">
-              Manage inventory, fulfill orders, and supply to a network of
-              retailers.
+              {DISTRIBUTOR_DESCRIPTION}
             </p>
           </Button>
 
@@ -86,11 +97,10 @@ const RoleSelectionPage = () => {
               />{" "}
             </div>
             <p className="text-lg font-bold text-slate-900 dark:text-gray-200">
-              I am a Retailer
+              {I_AM_A_RETAILER}
             </p>
             <p className="mt-1 text-sm text-slate-500">
-              Place orders from distributors, manage stock, and sell to
-              consumers.
+              {RETAILER_DESCRIPTION}
             </p>
           </Button>
         </div>
@@ -107,22 +117,22 @@ const RoleSelectionPage = () => {
                   : "bg-blue-300 text-white cursor-not-allowed"
               }`}
           >
-            Continue
+            {CONTINUE}
           </Button>
         </div>
 
         {/* Footer */}
         <div className="text-center">
           <p className="mb-2 text-sm text-slate-500">
-            Already have an account?{" "}
+            {ALREADY_HAVE_AN_ACCOUNT}
             <Link
               href="/login"
               className="font-medium text-blue-600 hover:underline"
             >
-              Log in
+              {LOGIN_IN}
             </Link>
           </p>
-          <p className="text-xs text-slate-400">© 2024 SupplyChain App, Inc.</p>
+          <p className="text-xs text-slate-400">{COPYRIGHT}</p>
         </div>
       </main>
     </div>
