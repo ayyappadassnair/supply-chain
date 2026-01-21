@@ -9,6 +9,7 @@ import StepBusiness from "./StepBusiness";
 import StepReview from "./StepReview";
 import { validateStep1, validateStep2 } from "@/utils/utils";
 import Button from "@/common/Button";
+import { BACK, CONFIRM_AND_FINISH, CONTINUE } from "@/constants/constants";
 
 type Errors = {
   companyName?: string;
@@ -141,7 +142,7 @@ const DistributorSignUp = () => {
                 onClick={() => setStep(step - 1)}
                 className="px-5 py-2 rounded-lg bg-gray-100 disabled:opacity-40"
               >
-                Back
+                {BACK}
               </Button>
             )}
 
@@ -150,7 +151,7 @@ const DistributorSignUp = () => {
                 onClick={handleNext}
                 className="px-6 py-2 rounded-lg bg-blue-600 text-white"
               >
-                Continue
+                {CONTINUE}
               </Button>
             ) : (
               <Button
@@ -158,7 +159,7 @@ const DistributorSignUp = () => {
                 className="px-6 py-2 rounded-lg bg-blue-600 text-white disabled:opacity-40"
                 onClick={handleComplete}
               >
-                Confirm & Finish
+                {CONFIRM_AND_FINISH}
               </Button>
             )}
           </div>

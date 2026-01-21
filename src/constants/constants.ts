@@ -49,3 +49,14 @@ export const WORK_EMAIL = "Work Email";
 export const BUSINESS_NAME = "Business Name";
 export const BUSINESS_ADDRESS = "Business Address";
 export const PHONE_NUMBER = "Phone Number";
+
+export const CONFIRM_AND_FINISH = "Confirm & Finish";
+export const PARTNER_WITH_US = "Partner with Us.";
+export const STREAMLINE_YOUR_SUPPLY_CHAIN = "Streamline Your Supply Chain.";
+export const ACCESS_VERIFIED_RETAILERS = "Access verified retailers";
+export const REAL_TIME_INVENTORY_INSIGHTS = "Real-time inventory insights";
+export const SIMPLIFIED_LOGISTICS = "Simplified logistics";
+export const CREATE_YOUR_DISTRIBUTOR_ACCOUNT =
+  "Create Your Distributor Account";
+export const BUSINESS_DETAILS = "Business Details";
+export const REVIEW_AND_FINISH = "Review & Finish";

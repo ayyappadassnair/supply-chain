@@ -1,4 +1,5 @@
 import Input from "@/common/Input";
+import { CREATE_YOUR_DISTRIBUTOR_ACCOUNT } from "@/constants/constants";
 
 type StepAccountProps = {
   companyName: string;
@@ -30,7 +31,7 @@ const StepAccount = ({
 }: StepAccountProps) => {
   return (
     <div className="flex flex-col gap-6">
-      <h2 className="text-3xl font-black">Create Your Distributor Account</h2>
+      <h2 className="text-3xl font-black">{CREATE_YOUR_DISTRIBUTOR_ACCOUNT}</h2>
 
       <Input
         label="Company Name"

@@ -1,6 +1,7 @@
 import Input from "@/common/Input";
 import Select from "@/common/Select";
 import Textarea from "@/common/TextArea";
+import { BUSINESS_DETAILS } from "@/constants/constants";
 
 type StepBusinessProps = {
   businessType: string;
@@ -28,7 +29,7 @@ const StepBusiness = ({
 }: StepBusinessProps) => {
   return (
     <div className="flex flex-col gap-6">
-      <h2 className="text-3xl font-black">Business Details</h2>
+      <h2 className="text-3xl font-black">{BUSINESS_DETAILS}</h2>
 
       <Select
         label="Business Type"

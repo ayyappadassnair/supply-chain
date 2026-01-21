@@ -1,4 +1,5 @@
 import Checkbox from "@/common/Checkbox";
+import { REVIEW_AND_FINISH } from "@/constants/constants";
 
 type StepReviewProps = {
   companyName: string;
@@ -17,7 +18,7 @@ const StepReview = ({
 }: StepReviewProps) => {
   return (
     <div className="flex flex-col gap-6">
-      <h2 className="text-3xl font-black">Review & Finish</h2>
+      <h2 className="text-3xl font-black">{REVIEW_AND_FINISH}</h2>
 
       <div className="border rounded-lg p-4 space-y-3 text-sm">
         <ReviewItem label="Company Name" value={companyName} />
