@@ -1,4 +1,4 @@
-import Checkbox from "../common/Checkbox";
+import Checkbox from "@/common/Checkbox";
 
 type StepReviewProps = {
   companyName: string;

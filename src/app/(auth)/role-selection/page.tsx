@@ -1,4 +1,4 @@
-import RoleSelectionPage from "@/components/RoleSelection";
+import RoleSelectionPage from "@/components/login/RoleSelection";
 
 const page = () => {
   return <RoleSelectionPage />;

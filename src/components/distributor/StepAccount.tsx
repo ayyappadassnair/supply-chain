@@ -1,4 +1,4 @@
-import Input from "../common/Input";
+import Input from "@/common/Input";
 
 type StepAccountProps = {
   companyName: string;
@@ -11,6 +11,7 @@ type StepAccountProps = {
   setPassword: (v: string) => void;
   confirmPassword: string;
   setConfirmPassword: (v: string) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   errors: any;
 };
 

@@ -1,3 +1,4 @@
+import Input from "@/common/Input";
 import { areFieldsFilled } from "@/utils/utils";
 import ProgressBar from "./ProgressBar";
 import { RetailerFormData } from "./RetailerSignUp";
@@ -36,56 +37,36 @@ const StepBussiness = ({ data, onChange, onNext, onBack }: Props) => {
       </div>
 
       {/* COMPANY NAME */}
-      <label className="flex flex-col gap-2">
-        <span className="text-sm font-semibold text-gray-800">
-          Company Name
-        </span>
-        <input
-          className="h-12 rounded-lg border border-gray-300 px-4"
-          value={data.companyName}
-          onChange={(e) => onChange("companyName", e.target.value)}
-          placeholder="Enter your company legal name"
-        />
-      </label>
+      <Input
+        label="Company Name"
+        value={data.companyName}
+        onChange={(v: string) => onChange("companyName", v)}
+        placeholder="Enter your company legal name"
+      />
 
       {/* LEGAL ADDRESS */}
-      <label className="flex flex-col gap-2">
-        <span className="text-sm font-semibold text-gray-800">
-          Legal Address
-        </span>
-        <input
-          className="h-12 rounded-lg border border-gray-300 px-4"
-          value={data.address}
-          onChange={(e) => onChange("address", e.target.value)}
-          placeholder="123 Main Street"
-        />
-      </label>
+      <Input
+        label="Legal Address"
+        value={data.address}
+        onChange={(v: string) => onChange("address", v)}
+        placeholder="123 Main Street"
+      />
 
       {/* REGISTRATION + TAX */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <label className="flex flex-col gap-2">
-          <span className="text-sm font-semibold text-gray-800">
-            Business Registration No.
-          </span>
-          <input
-            className="h-12 rounded-lg border border-gray-300 px-4"
-            value={data.registrationNo}
-            onChange={(e) => onChange("registrationNo", e.target.value)}
-            placeholder="Registration Number"
-          />
-        </label>
+        <Input
+          label="Business Registration No."
+          value={data.registrationNo}
+          onChange={(v: string) => onChange("registrationNo", v)}
+          placeholder="Registration Number"
+        />
 
-        <label className="flex flex-col gap-2">
-          <span className="text-sm font-semibold text-gray-800">
-            Tax ID / VAT Number
-          </span>
-          <input
-            className="h-12 rounded-lg border border-gray-300 px-4"
-            value={data.taxId}
-            onChange={(e) => onChange("taxId", e.target.value)}
-            placeholder="Tax ID"
-          />
-        </label>
+        <Input
+          label="Tax ID / VAT Number"
+          value={data.taxId}
+          onChange={(v: string) => onChange("taxId", v)}
+          placeholder="Tax ID"
+        />
       </div>
 
       {/* CONTACT SECTION */}
@@ -97,29 +78,19 @@ const StepBussiness = ({ data, onChange, onNext, onBack }: Props) => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <label className="flex flex-col gap-2">
-          <span className="text-sm font-semibold text-gray-800">
-            Contact Person Name
-          </span>
-          <input
-            className="h-12 rounded-lg border border-gray-300 px-4"
-            value={data.contactName}
-            onChange={(e) => onChange("contactName", e.target.value)}
-            placeholder="Full name"
-          />
-        </label>
+        <Input
+          label="Contact Person Name"
+          value={data.contactName}
+          onChange={(v: string) => onChange("contactName", v)}
+          placeholder="Full name"
+        />
 
-        <label className="flex flex-col gap-2">
-          <span className="text-sm font-semibold text-gray-800">
-            Phone Number
-          </span>
-          <input
-            className="h-12 rounded-lg border border-gray-300 px-4"
-            value={data.phone}
-            onChange={(e) => onChange("phone", e.target.value)}
-            placeholder="+91 98765 43210"
-          />
-        </label>
+        <Input
+          label="Phone Number"
+          value={data.phone}
+          onChange={(v: string) => onChange("phone", v)}
+          placeholder="+91 98765 43210"
+        />
       </div>
 
       {/* ACTIONS */}
@@ -134,7 +105,9 @@ const StepBussiness = ({ data, onChange, onNext, onBack }: Props) => {
         <button
           onClick={onNext}
           disabled={!isFormValid}
-          className={`h-12 flex-1 rounded-lg bg-blue-800 text-white font-bold hover:bg-blue-700 ${!isFormValid ? "opacity-50 cursor-not-allowed" : ""}`}
+          className={`h-12 flex-1 rounded-lg bg-blue-800 text-white font-bold hover:bg-blue-700 ${
+            !isFormValid ? "opacity-50 cursor-not-allowed" : ""
+          }`}
         >
           Save & Continue
         </button>

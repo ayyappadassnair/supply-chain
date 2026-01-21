@@ -1,6 +1,8 @@
+import Input from "@/common/Input";
 import { areFieldsFilled } from "@/utils/utils";
 import ProgressBar from "./ProgressBar";
 import { RetailerFormData } from "./RetailerSignUp";
+import { useState } from "react";
 
 type Props = {
   data: RetailerFormData;
@@ -18,6 +20,8 @@ const REQUIRED_FIELDS: (keyof RetailerFormData)[] = [
 const StepAccount = ({ data, onChange, onNext }: Props) => {
   const isFormValid = areFieldsFilled(data, REQUIRED_FIELDS);
 
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+
   return (
     <div className="max-w-2xl mx-auto flex flex-col gap-6 justify-center">
       <ProgressBar step={1} />
@@ -33,70 +37,54 @@ const StepAccount = ({ data, onChange, onNext }: Props) => {
 
       {/* NAME */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <label className="flex flex-col gap-2">
-          <span className="text-sm font-semibold text-gray-800">
-            First Name
-          </span>
-          <input
-            className="h-12 rounded-lg border border-gray-300 px-4"
-            value={data.firstName}
-            onChange={(e) => onChange("firstName", e.target.value)}
-            placeholder="Enter your first name"
-          />
-        </label>
+        <Input
+          label="First Name"
+          value={data.firstName}
+          onChange={(v: string) => onChange("firstName", v)}
+          placeholder="Enter your first name"
+        />
 
-        <label className="flex flex-col gap-2">
-          <span className="text-sm font-semibold text-gray-800">Last Name</span>
-          <input
-            className="h-12 rounded-lg border border-gray-300 px-4"
-            value={data.lastName}
-            onChange={(e) => onChange("lastName", e.target.value)}
-            placeholder="Enter your last name"
-          />
-        </label>
+        <Input
+          label="Last Name"
+          value={data.lastName}
+          onChange={(v: string) => onChange("lastName", v)}
+          placeholder="Enter your last name"
+        />
       </div>
 
       {/* EMAIL */}
-      <label className="flex flex-col gap-2">
-        <span className="text-sm font-semibold text-gray-800">Work Email</span>
-        <input
-          type="email"
-          className="h-12 rounded-lg border border-gray-300 px-4"
-          value={data.email}
-          onChange={(e) => onChange("email", e.target.value)}
-          placeholder="you@company.com"
-        />
-      </label>
+      <Input
+        label="Work Email"
+        type="email"
+        value={data.email}
+        onChange={(v: string) => onChange("email", v)}
+        placeholder="you@company.com"
+      />
 
       {/* PASSWORD */}
-      <label className="flex flex-col gap-2">
-        <span className="text-sm font-semibold text-gray-800">Password</span>
-        <input
-          type="password"
-          className="h-12 rounded-lg border border-gray-300 px-4"
-          value={data.password}
-          onChange={(e) => onChange("password", e.target.value)}
-          placeholder="Create a strong password"
-        />
-      </label>
+      <Input
+        label="Password"
+        type="password"
+        value={data.password}
+        onChange={(v: string) => onChange("password", v)}
+        placeholder="Create a strong password"
+      />
 
-      {/* CONFIRM PASSWORD */}
-      <label className="flex flex-col gap-2">
-        <span className="text-sm font-semibold text-gray-800">
-          Confirm Password
-        </span>
-        <input
-          type="password"
-          className="h-12 rounded-lg border border-gray-300 px-4"
-          // value="Re-enter your password"
-          onChange={() => {}}
-        />
-      </label>
+      {/* CONFIRM PASSWORD (UI only for now) */}
+      <Input
+        label="Confirm Password"
+        type="password"
+        value={confirmPassword}
+        onChange={(v: string) => setConfirmPassword(v)}
+        placeholder="Re-enter your password"
+      />
 
       <button
         onClick={onNext}
         disabled={!isFormValid}
-        className={`h-12 rounded-lg bg-blue-800 text-white font-bold hover:bg-blue-700 ${!isFormValid ? "opacity-50 cursor-not-allowed" : ""}`}
+        className={`h-12 rounded-lg bg-blue-800 text-white font-bold hover:bg-blue-700 ${
+          !isFormValid ? "opacity-50 cursor-not-allowed" : ""
+        }`}
       >
         Create Account & Continue
       </button>

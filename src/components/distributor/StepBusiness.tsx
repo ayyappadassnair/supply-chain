@@ -1,6 +1,6 @@
-import Input from "../common/Input";
-import Select from "../common/Select";
-import Textarea from "../common/TextArea";
+import Input from "@/common/Input";
+import Select from "@/common/Select";
+import Textarea from "@/common/TextArea";
 
 type StepBusinessProps = {
   businessType: string;
@@ -11,6 +11,7 @@ type StepBusinessProps = {
   setServiceAreas: (v: string) => void;
   productCategories: string;
   setProductCategories: (v: string) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   errors: any;
 };
 
