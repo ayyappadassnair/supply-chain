@@ -28,3 +28,24 @@ export const CONTINUE = "Continue";
 export const ALREADY_HAVE_AN_ACCOUNT = "Already have an account?";
 export const LOGIN_IN = "Login in";
 export const COPYRIGHT = "© 2024 SupplyChain App, Inc.";
+
+export const CREATE_YOUR_RETAILER_ACCOUNT = "Create Your Retailer Account";
+export const LETS_GET_YOU_STARTED = "Lets get you started on our network.";
+export const CREATE_ACCOUNT_AND_CONTINUE = "Create Account & Continue";
+export const TELL_US_ABOUT_YOUR_BUSINESS = "Tell Us About Your Business";
+export const BUSINESS_INFORMATION_DESCRIPTION =
+  "This information will be used to verify your retailer account.";
+export const PRIMARY_CONTACT = "Primary Contact";
+export const PRIMARY_CONTACT_DESCRIPTION =
+  "Who should we reach out to regarding this account?";
+export const SAVE_AND_CONTINUE = "Save and Continue";
+export const BACK = "Back";
+export const REVIEW_YOUR_INFORMATION = "Review Your Information";
+export const PLEASE_ENSURE_ALL_DETAILS_ARE_CORRECT =
+  "Please ensure all details are correct before finishing.";
+export const CONFIRM_AND_COMPLETE_ACCOUNT = "Confirm & Complete Account";
+export const FULL_NAME = "Full Name";
+export const WORK_EMAIL = "Work Email";
+export const BUSINESS_NAME = "Business Name";
+export const BUSINESS_ADDRESS = "Business Address";
+export const PHONE_NUMBER = "Phone Number";

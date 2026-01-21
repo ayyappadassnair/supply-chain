@@ -3,6 +3,14 @@ import { areFieldsFilled } from "@/utils/utils";
 import ProgressBar from "./ProgressBar";
 import { RetailerFormData } from "./RetailerSignUp";
 import Button from "@/common/Button";
+import {
+  BACK,
+  BUSINESS_INFORMATION_DESCRIPTION,
+  PRIMARY_CONTACT,
+  PRIMARY_CONTACT_DESCRIPTION,
+  SAVE_AND_CONTINUE,
+  TELL_US_ABOUT_YOUR_BUSINESS,
+} from "@/constants/constants";
 
 type Props = {
   data: RetailerFormData;
@@ -30,10 +38,10 @@ const StepBussiness = ({ data, onChange, onNext, onBack }: Props) => {
       {/* HEADER */}
       <div>
         <p className="text-3xl font-black tracking-[-0.033em]">
-          Tell Us About Your Business
+          {TELL_US_ABOUT_YOUR_BUSINESS}
         </p>
         <p className="text-base text-gray-600">
-          This information will be used to verify your retailer account.
+          {BUSINESS_INFORMATION_DESCRIPTION}
         </p>
       </div>
 
@@ -72,10 +80,8 @@ const StepBussiness = ({ data, onChange, onNext, onBack }: Props) => {
 
       {/* CONTACT SECTION */}
       <div className="pt-2">
-        <p className="font-semibold text-gray-900">Primary Contact</p>
-        <p className="text-sm text-gray-600">
-          Who should we reach out to regarding this account?
-        </p>
+        <p className="font-semibold text-gray-900">{PRIMARY_CONTACT}</p>
+        <p className="text-sm text-gray-600">{PRIMARY_CONTACT_DESCRIPTION}</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -100,7 +106,7 @@ const StepBussiness = ({ data, onChange, onNext, onBack }: Props) => {
           onClick={onBack}
           className="h-12 px-6 rounded-lg border border-gray-300 text-gray-700 font-semibold"
         >
-          Back
+          {BACK}
         </Button>
 
         <Button
@@ -110,7 +116,7 @@ const StepBussiness = ({ data, onChange, onNext, onBack }: Props) => {
             !isFormValid ? "opacity-50 cursor-not-allowed" : ""
           }`}
         >
-          Save & Continue
+          {SAVE_AND_CONTINUE}
         </Button>
       </div>
     </div>

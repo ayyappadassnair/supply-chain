@@ -4,6 +4,11 @@ import ProgressBar from "./ProgressBar";
 import { RetailerFormData } from "./RetailerSignUp";
 import { useState } from "react";
 import Button from "@/common/Button";
+import {
+  CREATE_ACCOUNT_AND_CONTINUE,
+  CREATE_YOUR_RETAILER_ACCOUNT,
+  LETS_GET_YOU_STARTED,
+} from "@/constants/constants";
 
 type Props = {
   data: RetailerFormData;
@@ -29,11 +34,9 @@ const StepAccount = ({ data, onChange, onNext }: Props) => {
 
       <div>
         <p className="text-3xl font-black leading-tight tracking-[-0.033em]">
-          Create Your Retailer Account
+          {CREATE_YOUR_RETAILER_ACCOUNT}
         </p>
-        <p className="text-base text-gray-600">
-          Lets get you started on our network.
-        </p>
+        <p className="text-base text-gray-600">{LETS_GET_YOU_STARTED}</p>
       </div>
 
       {/* NAME */}
@@ -87,7 +90,7 @@ const StepAccount = ({ data, onChange, onNext }: Props) => {
           !isFormValid ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >
-        Create Account & Continue
+        {CREATE_ACCOUNT_AND_CONTINUE}
       </Button>
     </div>
   );
