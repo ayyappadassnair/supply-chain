@@ -9,6 +9,7 @@ type SelectProps = {
   onChange: (v: string) => void;
   options: Option[];
   placeholder?: string;
+  error?: string;
 };
 
 const Select = ({
@@ -17,6 +18,7 @@ const Select = ({
   onChange,
   options,
   placeholder = "Select an option",
+  error,
 }: SelectProps) => {
   return (
     <div className="flex flex-col gap-1.5">
@@ -25,7 +27,9 @@ const Select = ({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="rounded-lg border px-3 py-2"
+        className={`rounded-lg border px-3 py-2 ${
+          error ? "border-red-500" : "border-gray-300"
+        }`}
       >
         <option value="">{placeholder}</option>
 
@@ -35,6 +39,7 @@ const Select = ({
           </option>
         ))}
       </select>
+      {error && <p className="text-xs text-red-600">{error}</p>}
     </div>
   );
 };

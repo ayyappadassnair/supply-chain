@@ -30,6 +30,7 @@ const StepBusiness = ({
           { label: "Importer", value: "Importer" },
           { label: "Other", value: "Other" },
         ]}
+        error={errors.businessType}
       />
 
       <Input
@@ -53,6 +54,7 @@ const StepBusiness = ({
         value={productCategories}
         onChange={setProductCategories}
         placeholder="e.g., Electronics, Apparel"
+        error={errors.productCategories}
       />
     </div>
   );
