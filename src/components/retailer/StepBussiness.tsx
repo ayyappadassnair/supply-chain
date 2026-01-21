@@ -1,7 +1,7 @@
 import Input from "@/common/Input";
 import { areFieldsFilled } from "@/utils/utils";
 import ProgressBar from "./ProgressBar";
-import { RetailerFormData } from "./RetailerSignUp";
+
 import Button from "@/common/Button";
 import {
   BACK,
@@ -11,13 +11,10 @@ import {
   SAVE_AND_CONTINUE,
   TELL_US_ABOUT_YOUR_BUSINESS,
 } from "@/constants/constants";
-
-type Props = {
-  data: RetailerFormData;
-  onChange: (key: keyof RetailerFormData, value: string) => void;
-  onNext: () => void;
-  onBack: () => void;
-};
+import {
+  RetailerFormData,
+  RetailerStepBusinessProps,
+} from "@/constants/models";
 
 const REQUIRED_FIELDS: (keyof RetailerFormData)[] = [
   "companyName",
@@ -28,7 +25,12 @@ const REQUIRED_FIELDS: (keyof RetailerFormData)[] = [
   "phone",
 ];
 
-const StepBussiness = ({ data, onChange, onNext, onBack }: Props) => {
+const StepBussiness = ({
+  data,
+  onChange,
+  onNext,
+  onBack,
+}: RetailerStepBusinessProps) => {
   const isFormValid = areFieldsFilled(data, REQUIRED_FIELDS);
 
   return (

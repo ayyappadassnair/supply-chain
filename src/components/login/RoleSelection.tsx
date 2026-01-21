@@ -17,8 +17,7 @@ import {
   LOGIN_IN,
   RETAILER_DESCRIPTION,
 } from "@/constants/constants";
-
-type Role = "distributor" | "retailer" | null;
+import { Role } from "@/constants/models";
 
 const RoleSelectionPage = () => {
   const router = useRouter();

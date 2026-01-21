@@ -5,20 +5,7 @@ import LeftPanel from "./LeftPanel";
 import StepAccount from "./StepAccount";
 import StepReview from "./StepReview";
 import StepBussiness from "./StepBussiness";
-
-export type RetailerFormData = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-
-  companyName: string;
-  address: string;
-  registrationNo: string;
-  taxId: string;
-  contactName: string;
-  phone: string;
-};
+import { RetailerFormData } from "@/constants/models";
 
 const initialState: RetailerFormData = {
   firstName: "",
@@ -55,7 +42,9 @@ const RetailerSignUp = () => {
           {step === 1 && (
             <StepAccount
               data={form}
-              onChange={updateField}
+              onChange={(key, value) =>
+                updateField(key as keyof RetailerFormData, value)
+              }
               onNext={() => setStep(2)}
             />
           )}
@@ -63,7 +52,9 @@ const RetailerSignUp = () => {
           {step === 2 && (
             <StepBussiness
               data={form}
-              onChange={updateField}
+              onChange={(key, value) =>
+                updateField(key as keyof RetailerFormData, value)
+              }
               onNext={() => setStep(3)}
               onBack={() => setStep(1)}
             />

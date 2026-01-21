@@ -10,18 +10,7 @@ import StepReview from "./StepReview";
 import { validateStep1, validateStep2 } from "@/utils/utils";
 import Button from "@/common/Button";
 import { BACK, CONFIRM_AND_FINISH, CONTINUE } from "@/constants/constants";
-
-type Errors = {
-  companyName?: string;
-  regNumber?: string;
-  workEmail?: string;
-  password?: string;
-  confirmPassword?: string;
-  businessType?: string;
-  capacity?: string;
-  serviceAreas?: string;
-  productCategories?: string;
-};
+import { Errors } from "@/constants/models";
 
 const DistributorSignUp = () => {
   const router = useRouter();

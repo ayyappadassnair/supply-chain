@@ -1,7 +1,7 @@
 import Input from "@/common/Input";
 import { areFieldsFilled } from "@/utils/utils";
 import ProgressBar from "./ProgressBar";
-import { RetailerFormData } from "./RetailerSignUp";
+
 import { useState } from "react";
 import Button from "@/common/Button";
 import {
@@ -9,12 +9,7 @@ import {
   CREATE_YOUR_RETAILER_ACCOUNT,
   LETS_GET_YOU_STARTED,
 } from "@/constants/constants";
-
-type Props = {
-  data: RetailerFormData;
-  onChange: (key: keyof RetailerFormData, value: string) => void;
-  onNext: () => void;
-};
+import { RetailerFormData, RetailerStepAccountProps } from "@/constants/models";
 
 const REQUIRED_FIELDS: (keyof RetailerFormData)[] = [
   "firstName",
@@ -23,7 +18,7 @@ const REQUIRED_FIELDS: (keyof RetailerFormData)[] = [
   "password",
 ];
 
-const StepAccount = ({ data, onChange, onNext }: Props) => {
+const StepAccount = ({ data, onChange, onNext }: RetailerStepAccountProps) => {
   const isFormValid = areFieldsFilled(data, REQUIRED_FIELDS);
 
   const [confirmPassword, setConfirmPassword] = useState<string>("");

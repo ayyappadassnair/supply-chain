@@ -1,20 +1,6 @@
 import Input from "@/common/Input";
 import { CREATE_YOUR_DISTRIBUTOR_ACCOUNT } from "@/constants/constants";
-
-type StepAccountProps = {
-  companyName: string;
-  setCompanyName: (v: string) => void;
-  regNumber: string;
-  setRegNumber: (v: string) => void;
-  workEmail: string;
-  setWorkEmail: (v: string) => void;
-  password: string;
-  setPassword: (v: string) => void;
-  confirmPassword: string;
-  setConfirmPassword: (v: string) => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  errors: any;
-};
+import { DistributorStepAccountProps } from "@/constants/models";
 
 const StepAccount = ({
   companyName,
@@ -28,7 +14,7 @@ const StepAccount = ({
   confirmPassword,
   setConfirmPassword,
   errors,
-}: StepAccountProps) => {
+}: DistributorStepAccountProps) => {
   return (
     <div className="flex flex-col gap-6">
       <h2 className="text-3xl font-black">{CREATE_YOUR_DISTRIBUTOR_ACCOUNT}</h2>

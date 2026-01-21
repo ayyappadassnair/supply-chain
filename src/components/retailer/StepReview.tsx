@@ -1,6 +1,5 @@
 import { useRouter } from "next/navigation";
 import ProgressBar from "./ProgressBar";
-import { RetailerFormData } from "./RetailerSignUp";
 import Button from "@/common/Button";
 import {
   BACK,
@@ -13,6 +12,7 @@ import {
   PHONE_NUMBER,
   PLEASE_ENSURE_ALL_DETAILS_ARE_CORRECT,
 } from "@/constants/constants";
+import { RetailerFormData } from "@/constants/models";
 
 const StepReview = ({
   data,

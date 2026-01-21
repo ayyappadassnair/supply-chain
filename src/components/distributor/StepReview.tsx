@@ -1,13 +1,6 @@
 import Checkbox from "@/common/Checkbox";
 import { REVIEW_AND_FINISH } from "@/constants/constants";
-
-type StepReviewProps = {
-  companyName: string;
-  regNumber: string;
-  workEmail: string;
-  agree: boolean;
-  setAgree: (v: boolean) => void;
-};
+import { DistributorStepReviewProps } from "@/constants/models";
 
 const StepReview = ({
   companyName,
@@ -15,7 +8,7 @@ const StepReview = ({
   workEmail,
   agree,
   setAgree,
-}: StepReviewProps) => {
+}: DistributorStepReviewProps) => {
   return (
     <div className="flex flex-col gap-6">
       <h2 className="text-3xl font-black">{REVIEW_AND_FINISH}</h2>

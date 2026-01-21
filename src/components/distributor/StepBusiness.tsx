@@ -2,19 +2,7 @@ import Input from "@/common/Input";
 import Select from "@/common/Select";
 import Textarea from "@/common/TextArea";
 import { BUSINESS_DETAILS } from "@/constants/constants";
-
-type StepBusinessProps = {
-  businessType: string;
-  setBusinessType: (v: string) => void;
-  capacity: string;
-  setCapacity: (v: string) => void;
-  serviceAreas: string;
-  setServiceAreas: (v: string) => void;
-  productCategories: string;
-  setProductCategories: (v: string) => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  errors: any;
-};
+import { DistributorStepBusinessProps } from "@/constants/models";
 
 const StepBusiness = ({
   businessType,
@@ -26,7 +14,7 @@ const StepBusiness = ({
   productCategories,
   setProductCategories,
   errors,
-}: StepBusinessProps) => {
+}: DistributorStepBusinessProps) => {
   return (
     <div className="flex flex-col gap-6">
       <h2 className="text-3xl font-black">{BUSINESS_DETAILS}</h2>
