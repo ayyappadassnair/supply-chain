@@ -29,9 +29,8 @@ const RetailerSignUp = () => {
   };
 
   return (
-    <div className="h-screen w-screen flex flex-col">
+    <div className="h-screen grid grid-cols-1 lg:grid-cols-2 custom-container shadow ">
       {/* MAIN CONTENT */}
-      <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-2 px-[10vw]">
         {/* LEFT PANEL */}
         <aside className="hidden lg:flex min-h-0 border-r border-gray-200 px-12 py-12">
           <LeftPanel step={step} />
@@ -63,7 +62,6 @@ const RetailerSignUp = () => {
           {step === 3 && <StepReview data={form} onBack={() => setStep(2)} />}
         </section>
       </div>
-    </div>
   );
 };
 

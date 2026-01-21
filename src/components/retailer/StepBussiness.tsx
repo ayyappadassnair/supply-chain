@@ -34,7 +34,7 @@ const StepBussiness = ({
   const isFormValid = areFieldsFilled(data, REQUIRED_FIELDS);
 
   return (
-    <div className="max-w-2xl mx-auto flex flex-col gap-8 pb-24">
+    <div className="max-w-2xl mx-auto flex flex-col gap-8 rounded-xl p-6 border border-gray-200 self-center shadow ">
       <ProgressBar step={2} />
 
       {/* HEADER */}
@@ -42,7 +42,7 @@ const StepBussiness = ({
         <p className="text-3xl font-black tracking-[-0.033em]">
           {TELL_US_ABOUT_YOUR_BUSINESS}
         </p>
-        <p className="text-base text-gray-600">
+        <p className="text-base text-gray-600 dark:text-gray-200">
           {BUSINESS_INFORMATION_DESCRIPTION}
         </p>
       </div>
@@ -82,8 +82,8 @@ const StepBussiness = ({
 
       {/* CONTACT SECTION */}
       <div className="pt-2">
-        <p className="font-semibold text-gray-900">{PRIMARY_CONTACT}</p>
-        <p className="text-sm text-gray-600">{PRIMARY_CONTACT_DESCRIPTION}</p>
+        <p className="font-semibold text-gray-900 dark:text-gray-200">{PRIMARY_CONTACT}</p>
+        <p className="text-sm text-gray-600 dark:text-gray-200">{PRIMARY_CONTACT_DESCRIPTION}</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -106,7 +106,7 @@ const StepBussiness = ({
       <div className="flex gap-4 pt-4">
         <Button
           onClick={onBack}
-          className="h-12 px-6 rounded-lg border border-gray-300 text-gray-700 font-semibold"
+          className="h-12 px-6 rounded-lg border border-gray-300 text-gray-700 font-semibold dark:text-gray-200"
         >
           {BACK}
         </Button>

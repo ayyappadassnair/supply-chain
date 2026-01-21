@@ -33,8 +33,8 @@ const StepIndicator = ({
       </div>
 
       <div>
-        <h3 className="font-bold">{title}</h3>
-        <p className="text-sm text-gray-600">{description}</p>
+        <h3 className="font-bold dark:text-gray-200">{title}</h3>
+        <p className="text-sm text-gray-600 dark:text-gray-200">{description}</p>
       </div>
     </div>
   );

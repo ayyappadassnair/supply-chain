@@ -24,14 +24,14 @@ const StepAccount = ({ data, onChange, onNext }: RetailerStepAccountProps) => {
   const [confirmPassword, setConfirmPassword] = useState<string>("");
 
   return (
-    <div className="max-w-2xl mx-auto flex flex-col gap-6 justify-center">
+    <div className="max-w-2xl mx-auto flex flex-col gap-6 justify-center rounded-xl p-6 border border-gray-200 self-center shadow ">
       <ProgressBar step={1} />
 
       <div>
         <p className="text-3xl font-black leading-tight tracking-[-0.033em]">
           {CREATE_YOUR_RETAILER_ACCOUNT}
         </p>
-        <p className="text-base text-gray-600">{LETS_GET_YOU_STARTED}</p>
+        <p className="text-base text-gray-600 dark:text-gray-200">{LETS_GET_YOU_STARTED}</p>
       </div>
 
       {/* NAME */}

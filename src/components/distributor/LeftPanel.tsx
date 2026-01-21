@@ -18,7 +18,7 @@ const LeftPanel = () => {
         </h1>
 
         <ul className="space-y-4 text-lg text-gray-600">
-          <li className="flex gap-2">
+          <li className="flex gap-2 dark:text-gray-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -30,7 +30,7 @@ const LeftPanel = () => {
             </svg>
             {ACCESS_VERIFIED_RETAILERS}
           </li>
-          <li className="flex gap-2">
+          <li className="flex gap-2 dark:text-gray-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -42,7 +42,7 @@ const LeftPanel = () => {
             </svg>{" "}
             {REAL_TIME_INVENTORY_INSIGHTS}
           </li>
-          <li className="flex gap-2">
+          <li className="flex gap-2 dark:text-gray-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"

@@ -29,3 +29,6 @@ body {
   margin: 0 auto;
   padding: 2vw 6vw;
 }
+.position-static-imp{
+  position: static !important;
+}

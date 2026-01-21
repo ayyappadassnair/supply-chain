@@ -74,13 +74,13 @@ const DistributorSignUp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-[10vw]">
-      <div className="w-full grid grid-cols-1 lg:grid-cols-2 bg-white overflow-hidden gap-[10vw]">
+    <div className="min-h-screen flex items-center justify-center custom-container">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
         {/* LEFT PANEL */}
         <LeftPanel />
 
         {/* RIGHT PANEL — CARD STYLE ADDED */}
-        <div className="p-8 flex flex-col gap-8 border rounded-2xl shadow-xl bg-white">
+        <div className="p-8 flex flex-col gap-8 border rounded-2xl shadow-xl">
           <ProgressBar step={step} />
 
           {step === 1 && (

@@ -20,7 +20,7 @@ const Select = ({
 }: SelectProps) => {
   return (
     <div className="flex flex-col gap-1.5">
-      <label className="text-sm font-medium text-gray-600">{label}</label>
+      <label className="text-sm font-medium text-gray-600 dark:text-gray-200">{label}</label>
 
       <select
         value={value}

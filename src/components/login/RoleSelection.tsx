@@ -46,7 +46,7 @@ const RoleSelectionPage = () => {
           <h1 className="text-4xl sm:text-5xl font-black tracking-tight dark:text-gray-200">
             {JOIN_OUR_NETWORK}
           </h1>
-          <p className="mt-2 text-lg text-slate-500">
+          <p className="mt-2 text-lg text-slate-500 dark:text-gray-200">
             {FIRST_TELL_US_WHO_YOU_ARE}
           </p>
         </div>
@@ -57,7 +57,7 @@ const RoleSelectionPage = () => {
           <Button
             type="button"
             onClick={() => setRole("distributor")}
-            className={`rounded-xl border p-6 text-left transition-all hover:border-blue-600 focus:outline-none ${isSelected(
+            className={`rounded-xl border text-left transition-all hover:border-blue-600 focus:outline-none  ${isSelected(
               "distributor",
             )}`}
           >
@@ -73,7 +73,7 @@ const RoleSelectionPage = () => {
             <p className="text-lg font-bold text-slate-900 dark:text-gray-200">
               {I_AM_A_DISTRIBUTOR}
             </p>
-            <p className="mt-1 text-sm text-slate-500">
+            <p className="mt-1 text-sm text-slate-500 dark:text-gray-100">
               {DISTRIBUTOR_DESCRIPTION}
             </p>
           </Button>
@@ -82,7 +82,7 @@ const RoleSelectionPage = () => {
           <Button
             type="button"
             onClick={() => setRole("retailer")}
-            className={`rounded-xl border p-6 text-left transition-all hover:border-blue-600 focus:outline-none ${isSelected(
+            className={`rounded-xl border py-[1.5rem] text-left transition-all hover:border-blue-600 focus:outline-none ${isSelected(
               "retailer",
             )}`}
           >
@@ -98,7 +98,7 @@ const RoleSelectionPage = () => {
             <p className="text-lg font-bold text-slate-900 dark:text-gray-200">
               {I_AM_A_RETAILER}
             </p>
-            <p className="mt-1 text-sm text-slate-500">
+            <p className="mt-1 text-sm text-slate-500 dark:text-gray-100">
               {RETAILER_DESCRIPTION}
             </p>
           </Button>
