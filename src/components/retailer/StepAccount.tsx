@@ -1,28 +1,21 @@
 import Input from "@/common/Input";
-import { areFieldsFilled } from "@/utils/utils";
 import ProgressBar from "./ProgressBar";
-
-import { useState } from "react";
 import Button from "@/common/Button";
 import {
   CREATE_ACCOUNT_AND_CONTINUE,
   CREATE_YOUR_RETAILER_ACCOUNT,
   LETS_GET_YOU_STARTED,
 } from "@/constants/constants";
-import { RetailerFormData, RetailerStepAccountProps } from "@/constants/models";
+import { RetailerStepAccountProps } from "@/constants/models";
 
-const REQUIRED_FIELDS: (keyof RetailerFormData)[] = [
-  "firstName",
-  "lastName",
-  "email",
-  "password",
-];
-
-const StepAccount = ({ data, onChange, onNext }: RetailerStepAccountProps) => {
-  const isFormValid = areFieldsFilled(data, REQUIRED_FIELDS);
-
-  const [confirmPassword, setConfirmPassword] = useState<string>("");
-
+const StepAccount = ({
+  data,
+  onChange,
+  onNext,
+  errors,
+  confirmPassword,
+  setConfirmPassword,
+}: RetailerStepAccountProps) => {
   return (
     <div className="max-w-2xl mx-auto flex flex-col gap-6 justify-center rounded-xl p-6 border border-gray-200 self-center shadow ">
       <ProgressBar step={1} />
@@ -31,7 +24,9 @@ const StepAccount = ({ data, onChange, onNext }: RetailerStepAccountProps) => {
         <p className="text-3xl font-black leading-tight tracking-[-0.033em]">
           {CREATE_YOUR_RETAILER_ACCOUNT}
         </p>
-        <p className="text-base text-gray-600 dark:text-gray-200">{LETS_GET_YOU_STARTED}</p>
+        <p className="text-base text-gray-600 dark:text-gray-200">
+          {LETS_GET_YOU_STARTED}
+        </p>
       </div>
 
       {/* NAME */}
@@ -41,6 +36,7 @@ const StepAccount = ({ data, onChange, onNext }: RetailerStepAccountProps) => {
           value={data.firstName}
           onChange={(v: string) => onChange("firstName", v)}
           placeholder="Enter your first name"
+          error={errors.firstName}
         />
 
         <Input
@@ -48,6 +44,7 @@ const StepAccount = ({ data, onChange, onNext }: RetailerStepAccountProps) => {
           value={data.lastName}
           onChange={(v: string) => onChange("lastName", v)}
           placeholder="Enter your last name"
+          error={errors.lastName}
         />
       </div>
 
@@ -58,6 +55,7 @@ const StepAccount = ({ data, onChange, onNext }: RetailerStepAccountProps) => {
         value={data.email}
         onChange={(v: string) => onChange("email", v)}
         placeholder="you@company.com"
+        error={errors.email}
       />
 
       {/* PASSWORD */}
@@ -67,6 +65,7 @@ const StepAccount = ({ data, onChange, onNext }: RetailerStepAccountProps) => {
         value={data.password}
         onChange={(v: string) => onChange("password", v)}
         placeholder="Create a strong password"
+        error={errors.password}
       />
 
       {/* CONFIRM PASSWORD (UI only for now) */}
@@ -76,14 +75,12 @@ const StepAccount = ({ data, onChange, onNext }: RetailerStepAccountProps) => {
         value={confirmPassword}
         onChange={(v: string) => setConfirmPassword(v)}
         placeholder="Re-enter your password"
+        error={errors.confirmPassword}
       />
 
       <Button
         onClick={onNext}
-        disabled={!isFormValid}
-        className={`h-12 rounded-lg bg-blue-800 text-white font-bold hover:bg-blue-700 ${
-          !isFormValid ? "opacity-50 cursor-not-allowed" : ""
-        }`}
+        className="h-12 rounded-lg bg-blue-800 text-white font-bold hover:bg-blue-700"
       >
         {CREATE_ACCOUNT_AND_CONTINUE}
       </Button>

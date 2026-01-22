@@ -35,6 +35,10 @@ const DistributorSignUp = () => {
 
   const [errors, setErrors] = useState<Errors>({});
 
+  const clearError = (field: keyof Errors) => {
+    setErrors((prev) => ({ ...prev, [field]: undefined }));
+  };
+
   const handleComplete = () => {
     router.push("/distributor/dashboard");
   };
@@ -86,29 +90,67 @@ const DistributorSignUp = () => {
           {step === 1 && (
             <StepAccount
               companyName={companyName}
-              setCompanyName={setCompanyName}
+              setCompanyName={(val) => {
+                setCompanyName(val);
+                clearError("companyName");
+              }}
               regNumber={regNumber}
-              setRegNumber={setRegNumber}
+              setRegNumber={(val) => {
+                setRegNumber(val);
+                clearError("regNumber");
+              }}
               workEmail={workEmail}
-              setWorkEmail={setWorkEmail}
+              setWorkEmail={(val) => {
+                setWorkEmail(val);
+                clearError("workEmail");
+              }}
               password={password}
-              setPassword={setPassword}
+              setPassword={(val) => {
+                setPassword(val);
+                clearError("password");
+              }}
               confirmPassword={confirmPassword}
-              setConfirmPassword={setConfirmPassword}
+              setConfirmPassword={(val) => {
+                setConfirmPassword(val);
+                clearError("confirmPassword");
+              }}
               errors={errors}
             />
           )}
 
           {step === 2 && (
+            // <StepBusiness
+            //   businessType={businessType}
+            //   setBusinessType={setBusinessType}
+            //   capacity={capacity}
+            //   setCapacity={setCapacity}
+            //   serviceAreas={serviceAreas}
+            //   setServiceAreas={setServiceAreas}
+            //   productCategories={productCategories}
+            //   setProductCategories={setProductCategories}
+            //   errors={errors}
+            // />
             <StepBusiness
               businessType={businessType}
-              setBusinessType={setBusinessType}
+              setBusinessType={(val) => {
+                setBusinessType(val);
+                clearError("businessType");
+              }}
               capacity={capacity}
-              setCapacity={setCapacity}
+              setCapacity={(val) => {
+                setCapacity(val);
+                clearError("capacity");
+              }}
               serviceAreas={serviceAreas}
-              setServiceAreas={setServiceAreas}
+              setServiceAreas={(val) => {
+                setServiceAreas(val);
+                clearError("serviceAreas");
+              }}
               productCategories={productCategories}
-              setProductCategories={setProductCategories}
+              setProductCategories={(val) => {
+                setProductCategories(val);
+                clearError("productCategories");
+              }}
               errors={errors}
             />
           )}

@@ -5,6 +5,7 @@ export type RetailerFormData = {
   lastName: string;
   email: string;
   password: string;
+  confirmPassword: string;
 
   companyName: string;
   address: string;
@@ -66,6 +67,9 @@ export type RetailerStepAccountProps = {
   data: RetailerFormData;
   onChange: (key: keyof RetailerFormData, value: string) => void;
   onNext: () => void;
+  errors: RetailerErrors;
+  confirmPassword: string;
+  setConfirmPassword: (v: string) => void;
 };
 
 export type RetailerStepBusinessProps = {
@@ -73,4 +77,7 @@ export type RetailerStepBusinessProps = {
   onChange: (key: keyof RetailerFormData, value: string) => void;
   onNext: () => void;
   onBack: () => void;
+  errors: RetailerErrors;
 };
+
+export type RetailerErrors = Partial<Record<keyof RetailerFormData, string>>;
