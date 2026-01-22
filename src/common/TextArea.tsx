@@ -16,8 +16,8 @@ const Textarea = ({
   error,
 }: TextareaProps) => {
   return (
-    <div className="flex flex-col gap-1.5">
-      <label className="text-sm font-medium text-gray-600">{label}</label>
+    <div className="flex flex-col gap-1.5 relative">
+      <label className="text-sm font-medium text-gray-600 dark:text-gray-200 ">{label}</label>
 
       <textarea
         rows={rows}
@@ -28,7 +28,7 @@ const Textarea = ({
           error ? "border-red-500" : "border-gray-300"
         }`}
       />
-      {error && <p className="text-xs text-red-600">{error}</p>}
+      {error && <p className="text-xs text-red-600 absolute bottom-[-20px] break-all text-align-last">{error}</p>}
     </div>
   );
 };

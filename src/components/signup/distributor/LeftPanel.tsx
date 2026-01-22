@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const LeftPanel = () => {
   return (
-    <div className="hidden lg:flex flex-col justify-between p-10">
+    <div className="hidden lg:flex flex-col justify-between p-10 border-r border-gray-200">
       <div className="space-y-6">
         <h1 className="text-4xl font-black leading-tight">
           {PARTNER_WITH_US}
@@ -17,7 +17,7 @@ const LeftPanel = () => {
           {STREAMLINE_YOUR_SUPPLY_CHAIN}
         </h1>
 
-        <ul className="space-y-4 text-lg text-gray-600">
+        <ul className="space-y-4 text-lg text-gray-600 mb-3">
           <li className="flex gap-2 dark:text-gray-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,10 +59,12 @@ const LeftPanel = () => {
 
       <div className="relative aspect-video rounded-xl overflow-hidden">
         <Image
-          src="/distributor-banner.png"
-          alt="Distributor banner"
-          fill
-          className="object-cover"
+          src="/retailer-create-banner.png"
+          alt="Retailer banner"
+          width={500}
+          height={100}
+          className="rounded-xl object-cover"
+          priority
         />
       </div>
     </div>

@@ -21,7 +21,8 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
       className={`
-        px-4 py-2 disabled:opacity-40 disabled:cursor-not-allowed
+        px-4 py-2 disabled:opacity-40 disabled:cursor-not-allowed dark dark:text-gray-200
+
         ${fullWidth ? "w-full" : ""}
         ${className}
       `}

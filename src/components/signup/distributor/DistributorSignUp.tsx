@@ -86,7 +86,7 @@ const DistributorSignUp = () => {
         <LeftPanel />
 
         {/* RIGHT PANEL — CARD STYLE ADDED */}
-        <div className="p-8 flex flex-col gap-8 border rounded-2xl shadow-xl">
+        <div className="p-8 flex flex-col gap-8 border rounded-2xl shadow-xl max-w-2xl mx-auto self-center w-full">
           <ProgressBar step={step} />
 
           {step === 1 && (
@@ -178,7 +178,7 @@ const DistributorSignUp = () => {
               <Button
                 disabled={step === 1}
                 onClick={() => setStep(step - 1)}
-                className="px-5 py-2 rounded-lg bg-gray-100 disabled:opacity-40"
+                className="px-5 py-2 rounded-lg border disabled:opacity-40"
               >
                 {BACK}
               </Button>

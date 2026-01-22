@@ -33,7 +33,7 @@ export default StepReview;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ReviewItem = ({ label, value }: any) => (
   <div className="flex justify-between">
-    <span className="text-gray-500">{label}</span>
+    <span className="text-gray-500 dark:text-gray-200">{label}</span>
     <span className="font-medium">{value}</span>
   </div>
 );

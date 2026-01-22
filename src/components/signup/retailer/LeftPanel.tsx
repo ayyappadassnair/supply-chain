@@ -20,7 +20,7 @@ const LeftPanel = ({ step }: { step: number }) => {
       </div>
 
       {/* IMAGE */}
-      <div className="flex-1 flex items-center py-10">
+      <div className="flex-1 flex items-center">
         <Image
           src="/retailer-create-banner.png"
           alt="Retailer banner"

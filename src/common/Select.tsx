@@ -21,13 +21,13 @@ const Select = ({
   error,
 }: SelectProps) => {
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex flex-col gap-1.5 relative">
       <label className="text-sm font-medium text-gray-600 dark:text-gray-200">{label}</label>
 
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className={`rounded-lg border px-3 py-2 ${
+        className={`rounded-lg border px-3 py-2 dark:bg-[#0a0a0a] py-[11px] ${
           error ? "border-red-500" : "border-gray-300"
         }`}
       >
@@ -39,7 +39,7 @@ const Select = ({
           </option>
         ))}
       </select>
-      {error && <p className="text-xs text-red-600">{error}</p>}
+      {error && <p className="text-xs text-red-600 absolute top-[70px] break-all text-align-last">{error}</p>}
     </div>
   );
 };

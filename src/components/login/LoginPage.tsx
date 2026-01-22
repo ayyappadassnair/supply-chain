@@ -188,7 +188,7 @@ const LoginPage = () => {
             </Button>
 
             {/* CTA */}
-            <p className="text-sm text-slate-500 dark:text-slate-400 pt-4 flex justify-between">
+            <p className="text-sm text-slate-500 dark:text-slate-400 pt-4 flex justify-center items-center gap-2">
               {NEED_AN_ACCOUNT}
               <Link
                 href="/role-selection"

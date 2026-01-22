@@ -13,7 +13,7 @@ const Checkbox = ({ label, checked, onChange }: CheckboxProps) => {
         onChange={(e) => onChange(e.target.checked)}
         className="mt-0.5"
       />
-      <span>{label}</span>
+      <span className="dark:text-gray-200 ">{label}</span>
     </label>
   );
 };

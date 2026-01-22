@@ -52,7 +52,7 @@ const RoleSelectionPage = () => {
         </div>
 
         {/* Role Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 select-text-button">
           {/* Distributor */}
           <Button
             type="button"
@@ -122,11 +122,11 @@ const RoleSelectionPage = () => {
 
         {/* Footer */}
         <div className="text-center">
-          <p className="mb-2 text-sm text-slate-500">
+          <p className="mb-2 text-sm text-slate-500 dark:text-gray-200 ">
             {ALREADY_HAVE_AN_ACCOUNT}
             <Link
               href="/login"
-              className="font-medium text-blue-600 hover:underline"
+              className="font-medium text-blue-600 hover:underline ms-1"
             >
               {LOGIN_IN}
             </Link>
