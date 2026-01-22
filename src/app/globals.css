@@ -4,7 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-*{
+* {
   transition: all 0.3s ease-in-out;
 }
 @theme inline {
@@ -31,22 +31,27 @@ body {
   margin: 0 auto;
   padding: 2vw 6vw;
 }
-.text-align-last{
+.text-align-last {
   text-align-last: right;
 }
-.select-text-button > button{
-  background: linear-gradient(180deg,rgba(2, 0, 36, 0.11) 0%, rgba(21, 93, 252, 0.81) 100%);
+.select-text-button > button {
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 0.11) 0%,
+    rgba(21, 93, 252, 0.81) 100%
+  );
   border-color: rgba(21, 93, 252, 0.62);
 }
-.select-text-button > button:has(~ .ring-2){
+
+.select-text-button > button:has(~ .ring-2) {
   scale: 0.9;
 }
-.select-text-button > button.ring-2 ~ button{
+.select-text-button > button.ring-2 ~ button {
   scale: 0.9;
 }
-.select-text-button > button.ring-2{
+.select-text-button > button.ring-2 {
   scale: 1.1;
 }
-.select-text-button > button > p{
+.select-text-button > button > p {
   color: #fff;
 }
