@@ -3,7 +3,7 @@ import StepIndicator from "./StepIndicator";
 
 const LeftPanel = ({ step }: { step: number }) => {
   return (
-    <div className="flex flex-col h-full w-full">
+    <div className="flex flex-col h-full w-full gap-3">
       {/* TOP CONTENT */}
       <div className="flex flex-col gap-6">
         <h1 className="text-4xl font-black tracking-tight leading-tight">
