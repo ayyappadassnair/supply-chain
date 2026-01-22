@@ -1,4 +1,4 @@
-import RetailerDashboard from "@/components/retailer/dashboard/RetailerDashboard";
+import RetailerDashboard from "@/components/signup/retailer/dashboard/RetailerDashboard";
 
 const page = () => {
   return <RetailerDashboard />;

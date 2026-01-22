@@ -1,4 +1,4 @@
-import DistributorDashboard from "@/components/distributor/dashboard/DistributorDashboard";
+import DistributorDashboard from "@/components/signup/distributor/dashboard/DistributorDashboard";
 
 const page = () => {
   return <DistributorDashboard />;

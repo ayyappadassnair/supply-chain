@@ -31,9 +31,9 @@ const RoleSelectionPage = () => {
 
   const handleGoToRole = () => {
     if (role === "distributor") {
-      router.push("/distributor");
+      router.push("/distributor/signup");
     } else if (role === "retailer") {
-      router.push("/retailer");
+      router.push("/retailer/signup");
     }
   };
 
