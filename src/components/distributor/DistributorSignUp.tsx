@@ -26,6 +26,7 @@ const DistributorSignUp = () => {
 
   // STEP 2
   const [businessType, setBusinessType] = useState("");
+  const [contactNumber, setContactNumber] = useState("");
   const [capacity, setCapacity] = useState("");
   const [serviceAreas, setServiceAreas] = useState("");
   const [productCategories, setProductCategories] = useState("");
@@ -63,6 +64,7 @@ const DistributorSignUp = () => {
     if (step === 2) {
       const validationErrors = validateStep2({
         businessType,
+        contactNumber,
         capacity,
         serviceAreas,
         productCategories,
@@ -150,6 +152,11 @@ const DistributorSignUp = () => {
               setProductCategories={(val) => {
                 setProductCategories(val);
                 clearError("productCategories");
+              }}
+              contactNumber={contactNumber}
+              setContactNumber={(val) => {
+                setContactNumber(val);
+                clearError("contactNumber");
               }}
               errors={errors}
             />

@@ -22,6 +22,7 @@ export type Errors = {
   password?: string;
   confirmPassword?: string;
   businessType?: string;
+  contactNumber?: string;
   capacity?: string;
   serviceAreas?: string;
   productCategories?: string;
@@ -53,6 +54,8 @@ export type DistributorStepBusinessProps = {
   setProductCategories: (v: string) => void;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   errors: any;
+  contactNumber: string;
+  setContactNumber: (v: string) => void;
 };
 
 export type DistributorStepReviewProps = {

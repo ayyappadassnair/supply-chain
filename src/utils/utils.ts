@@ -14,16 +14,6 @@ export const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export const PASSWORD_REGEX =
   /^(?=.*[A-Z])(?=.*[@!#$%^&*])[A-Za-z\d@!#$%^&*]{6,}$/;
 
-export const areFieldsFilled = <T extends Record<string, any>>(
-  data: T,
-  requiredFields: (keyof T)[],
-): boolean => {
-  return requiredFields.every((field) => {
-    const value = data[field];
-    return typeof value === "string" && value.trim().length > 0;
-  });
-};
-
 export const validateRetailerStep1 = (
   data: RetailerFormData,
   confirmPassword: string,
@@ -115,6 +105,7 @@ export const validateStep1 = (data: Step1Data) => {
 };
 export const validateStep2 = (data: {
   businessType: string;
+  contactNumber: string;
   capacity: string;
   serviceAreas: string;
   productCategories: string;
@@ -123,12 +114,17 @@ export const validateStep2 = (data: {
 
   if (!data.businessType) errors.businessType = "Select business type";
 
-  if (!data.capacity) {
-    errors.capacity = "Capacity is required";
-  } else if (!/^\d+$/.test(data.capacity)) {
-    errors.capacity = "Capacity must be a number";
+  if (!data.contactNumber.trim()) {
+    errors.contactNumber = "Contact number is required";
+  } else if (!/^\d+$/.test(data.contactNumber)) {
+    errors.contactNumber = "Enter a valid contact number";
   }
 
+  if (!data.capacity.trim()) {
+    errors.capacity = "Capacity is required";
+  } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z0-9\s./-]+$/.test(data.capacity)) {
+    errors.capacity = "Capacity must contain both letters and numbers";
+  }
   if (!data.serviceAreas) errors.serviceAreas = "Service areas are required";
 
   if (!data.productCategories)

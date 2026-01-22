@@ -13,6 +13,8 @@ const StepBusiness = ({
   setServiceAreas,
   productCategories,
   setProductCategories,
+  contactNumber,
+  setContactNumber,
   errors,
 }: DistributorStepBusinessProps) => {
   return (
@@ -31,6 +33,14 @@ const StepBusiness = ({
           { label: "Other", value: "Other" },
         ]}
         error={errors.businessType}
+      />
+
+      <Input
+        label="Contact Number"
+        value={contactNumber}
+        onChange={setContactNumber}
+        placeholder="+1 234 567 8901"
+        error={errors.contactNumber}
       />
 
       <Input
