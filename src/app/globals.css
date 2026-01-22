@@ -32,9 +32,9 @@ body {
 .text-align-last{
   text-align-last: right;
 }
-.select-text-button .ring-2{
+.select-text-button > button{
   background: linear-gradient(180deg,rgba(2, 0, 36, 0.11) 0%, rgba(21, 93, 252, 1) 100%);
 }
-.select-text-button .ring-2 > p{
+.select-text-button > button > p{
   color: #fff;
 }
